@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build:dev": "webpack --env=dev --progress --profile --colors",
+    "build:dist": "webpack --env=prod --progress --profile --colors"
+  },
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "bootstrap-sass": "^3.3.7",
+    "cross-env": "^5.0.1",
+    "jquery": "^3.1.1",
+    "laravel-mix": "^1.0",
+    "lodash": "^4.17.4",
+    "ts-loader": "^2.2.2",
+    "vue": "^2.1.10",
+    "typescript": "^2.4.1",
+    "@angular/material": "^2.0.0-beta.8",
+    "@angular/animations": "^4.2.6"
+  },
+  "dependencies": {
+    "@angular/cdk": "^2.0.0-beta.8",
+    "@angular/common": "^4.2.6",
+    "@angular/common/http": "^4.2.6",
+    "@angular/compiler": "^4.2.6",
+    "@angular/compiler-cli": "^4.2.6",
+    "@angular/core": "^4.2.6",
+    "@angular/forms": "^4.2.6",
+    "@angular/http": "^4.2.6",
+    "@angular/platform-browser": "^4.2.6",
+    "@angular/platform-browser-dynamic": "^4.2.6",
+    "@angular/platform-browser/animations": "^4.2.6",
+    "@angular/platform-server": "^4.2.6",
+    "@angular/router": "^4.2.6",
+    "@angular2-material/progress-bar": "^2.0.0-alpha.8-3",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.4.2",
+    "webpack": "^3.2.0",
+    "zone.js": "^0.8.13"
+  }
+}

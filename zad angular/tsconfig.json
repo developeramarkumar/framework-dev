@@ -1,0 +1,25 @@
+{
+	"compileOnSave": false,
+  	"compilerOptions": {
+	    "outDir": "./public/js",
+	    "baseUrl": "./resources/assets/admin",
+	    "sourceMap": true,
+	    "declaration": false,
+	    "moduleResolution": "node",
+	    "emitDecoratorMetadata": true,
+	    "experimentalDecorators": true,
+	    "target": "es5",
+	    "removeComments": true,
+      	"noImplicitAny": false,
+	    "typeRoots": [
+	      "node_modules/@types"
+	    ],
+	    "lib": [
+	      "es2016",
+	      "dom"
+	    ]
+  	},
+	"files":[
+		"resources/assets/admin/main.ts"
+	]
+}
