@@ -1,0 +1,69 @@
+
+security:
+    encoders:
+        entity_admin:
+            class: AppBundle\Entity\Admin
+            algorithm: bcrypt
+            iterations: 5000
+            encode_as_base64: false
+        entity_user:
+            class: AppBundle\Entity\User
+            algorithm: bcrypt
+            iterations: 1000
+            encode_as_base64: false
+
+    providers:
+        entity_admin:
+            entity:
+                class: AppBundle\Entity\Admin
+                property: username
+        entity_user:
+            entity:
+                class: AppBundle\Entity\User
+                property: username
+
+    firewalls:
+        admin_secured_area:
+            pattern: /admin/.*
+            provider: entity_admin
+            anonymous: ~
+            form_login:
+                check_path: /admin/login
+                login_path: /admin/login
+            logout:
+                path:   /admin/logout
+                target: /admin/
+        user_secured_area:
+            pattern: /user/.*
+            provider: entity_user
+            anonymous: ~
+            form_login:
+                check_path: /user/login
+                login_path: /user/login
+            logout:
+                path:   /user/logout
+                target: /user/
+        main:
+            pattern: /.*
+            anonymous: ~        
+    access_control:
+        admin_login:
+            path: /admin/login
+            roles: IS_AUTHENTICATED_ANONYMOUSLY
+        admin_register:
+            path: /admin/register
+            roles: IS_AUTHENTICATED_ANONYMOUSLY
+        admin_area:
+            path: /admin/.*
+            roles: ROLE_ADMIN
+        user_login:
+            path: /user/login
+            roles: IS_AUTHENTICATED_ANONYMOUSLY
+        user_register:
+            path: /user/register
+            roles: IS_AUTHENTICATED_ANONYMOUSLY
+        user_area:
+            path: /user/.*
+            roles: ROLE_USER
+    acl:
+        connection: default

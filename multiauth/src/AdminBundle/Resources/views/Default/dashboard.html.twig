@@ -1,0 +1,27 @@
+{% extends "AdminBundle::Layout/master.html.twig" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block body %}
+
+    <section>
+        {% include 'AdminBundle:Common:leftmenu.html.twig' %}
+        <!-- body content start-->
+        <div class="body-content" style="min-height: 1200px;">
+            {% include 'AdminBundle:Common:header.html.twig' %}
+            <!--body wrapper start-->
+            <div class="wrapper">      
+            {% if is_granted(expression(
+    '"ROLE_ADMINs" '
+)) %}   
+<a href="...">Delete</a>
+{% endif %}
+                body content goes here ..
+            </div>
+            {% include 'AdminBundle:Common:footer.html.twig' %}
+            {% include 'AdminBundle:Common:rightmenu.html.twig' %}
+            <!--body wrapper end-->
+        </div>
+        <!-- body content end-->
+    </section>
+{% endblock %}

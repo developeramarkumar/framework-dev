@@ -1,0 +1,26 @@
+admin.homepage:
+    path:     /
+    defaults: { _controller: AdminBundle:Default:index }
+admin.register.form:
+    path:     /register
+    defaults: { _controller: AdminBundle:Auth\Register:form }
+    methods:  [GET]
+admin.register.post:
+    path:     /register
+    defaults: { _controller: AdminBundle:Auth\Register:register }
+    methods:  [POST]
+admin.login.form:
+    path:     /login
+    defaults: { _controller: AdminBundle:Auth\Login:form }
+    methods:  [get]
+admin.login.post:
+    path:     /login
+    defaults: { _controller: AdminBundle:Auth\Login:login }
+    methods:  [post]
+admin.logout:
+    path:     /logout
+    defaults: { _controller: AdminBundle:Auth\Login:logout }
+
+admin.dashboard:
+    path:     /dashboard
+    defaults: { _controller: AdminBundle:Dashboard:index }

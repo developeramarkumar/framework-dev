@@ -1,0 +1,26 @@
+user.homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+user.register.form:
+    path:     /register
+    defaults: { _controller: UserBundle:Auth\Register:form }
+    methods:  [GET]
+user.register.post:
+    path:     /register
+    defaults: { _controller: UserBundle:Auth\Register:register }
+    methods:  [POST]
+user.login.form:
+    path:     /login
+    defaults: { _controller: UserBundle:Auth\Login:form }
+    methods:  [get]
+user.login.post:
+    path:     /login
+    defaults: { _controller: UserBundle:Auth\Login:login }
+    methods:  [post]
+user.logout:
+    path:     /logout
+    defaults: { _controller: UserBundle:Auth\Login:logout }
+
+user.dashboard:
+    path:     /dashboard
+    defaults: { _controller: UserBundle:Dashboard:index }

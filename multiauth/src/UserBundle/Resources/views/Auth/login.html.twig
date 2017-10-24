@@ -1,0 +1,60 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}UserBundle:Auth\Login:login{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				{% if error %}
+			        <div class="text-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			    {% endif %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-primary">
+					<form action="" method="post">
+						<div class="panel-heading">
+							<h3 class="panel-title">Add Data</h3>
+						</div>
+						<div class="panel-body">
+							<div class="col-sm-12">
+								<div class="form-group clearfix">
+									<label for="_username" class="control-label"></label>
+									<input type="text" name="_username" class="form-control" value="{{ last_username }}">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group clearfix">
+									<label for="_password" class="control-label"></label>
+									<input type="password" name="_password" class="form-control">
+								</div>
+								<input type="hidden" name="_target_path" value="user.dashboard" />
+		        				<input type="hidden" name="_failure_path" value="user.login.form" />
+							</div>
+							
+
+						</div>
+						<div class="panel-footer">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group clearfix">
+										<button type="submit" class="btn btn-primary pull-right">Login</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>				
+			</div>
+		</div>
+	</div>
+{% endblock %}	
+{% block stylesheets %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% endblock %}
+{% block javascripts %}
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="ha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+{% endblock %}

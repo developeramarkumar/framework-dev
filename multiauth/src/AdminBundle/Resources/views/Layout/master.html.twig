@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+   
+       <!-- Base Styles -->
+    {% stylesheets  
+        '@AdminBundle/Resources/public/css/slidebars.css'
+        '@AdminBundle/Resources/public/js/switchery/switchery.min.css'
+        '@AdminBundle/Resources/public/css/bootstrap.min.css'
+        '@AdminBundle/Resources/public/css/bootstrap-reset.css'
+        '@AdminBundle/Resources/public/css/simple-line-icons.css'
+        '@AdminBundle/Resources/public/css/icomoon-weather.css'
+        '@AdminBundle/Resources/public/css/default-theme.css'
+        '@AdminBundle/Resources/public/css/style.css'
+        '@AdminBundle/Resources/public/css/style-responsive.css' 
+        '@AdminBundle/Resources/public/css/layout-theme-two.css'
+        filter="uglifycss" 
+        filter='cssrewrite'
+        output="css/admin.css"
+
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+    <body class="sticky-header">
+        {% block body %}{% endblock %}
+    </body>
+   
+      {% javascripts 
+        '@AdminBundle/Resources/public/js/jquery-1.11.1.min.js'
+        '@AdminBundle/Resources/public/js/jquery-migrate.js' 
+        '@AdminBundle/Resources/public/js/bootstrap.min.js'
+        '@AdminBundle/Resources/public/js/modernizr.min.js' 
+        '@AdminBundle/Resources/public/js/jquery.nicescroll.js'
+        '@AdminBundle/Resources/public/js/slidebars.min.js'
+        '@AdminBundle/Resources/public/js/switchery/switchery.min.js'
+        '@AdminBundle/Resources/public/js/switchery/switchery-init.js'
+        '@AdminBundle/Resources/public/js/sparkline/jquery.sparkline.js'
+        '@AdminBundle/Resources/public/js/sparkline/sparkline-init.js'
+        '@AdminBundle/Resources/public/js/scripts.js'
+        filter="uglifyjs2" 
+        output="js/admin.js"
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %} 
+</html>

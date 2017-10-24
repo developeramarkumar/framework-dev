@@ -1,0 +1,23 @@
+AppBundle\Entity\Admin:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\AdminRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: 255
+            unique: true
+        email:
+            type: string
+            length: 255
+            unique: true
+        password:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
