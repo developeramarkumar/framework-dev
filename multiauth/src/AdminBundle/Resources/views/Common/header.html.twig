@@ -3,7 +3,7 @@
 
                 <!--logo and logo icon start-->
                 <div class="logo dark-logo-bg hidden-xs hidden-sm">
-                    <a href="index-2.html">
+                    <a href="{{ path('admin.dashboard') }}">
                         <img src="{{asset('admin_assets/img/logo-icon.png')}}" alt="">
                         <!--<i class="fa fa-maxcdn"></i>-->
                         <span class="brand-name">SlickLab</span>
@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="icon-logo dark-logo-bg hidden-xs hidden-sm">
-                    <a href="index-2.html">
+                    <a href="{{ path('admin.dashboard') }}">
                         <img src="{{asset('admin_assets/img/logo-icon.png')}}" alt="">
                         <!--<i class="fa fa-maxcdn"></i>-->
                     </a>
@@ -111,23 +111,3 @@
                
 
 
-            <!-- page head start-->
-            <div class="page-head">
-                <h3>
-                	
-
-                    Dashboard
-                </h3>
-                <span class="sub-title">Welcome to SlickLab dashboard</span>
-                <div class="state-information">
-                    <div class="state-graph">
-                        <div id="balance" class="chart"></div>
-                        <div class="info">Balance $ 2,317</div>
-                    </div>
-                    <div class="state-graph">
-                        <div id="item-sold" class="chart"></div>
-                        <div class="info">Item Sold 1230</div>
-                    </div>
-                </div>
-            </div>
-            <!-- page head end-->

@@ -1,0 +1,62 @@
+{% extends "AdminBundle::Layout/master.html.twig" %}
+
+{% block title %}Admin Role List{% endblock %}
+
+{% block body %}
+
+    <section>
+        {% include 'AdminBundle:Common:leftmenu.html.twig' %}
+        <!-- body content start-->
+        <div class="body-content" style="min-height: 1200px;">
+            {% include 'AdminBundle:Common:header.html.twig' %}
+
+            <!-- page head start-->
+            <div class="page-head">
+                <h3> Role List</h3>
+               
+            </div>
+            <!-- page head end-->
+            <!--body wrapper start-->
+            <div class="wrapper">      
+               <div class="row">
+                    <div class="col-md-12">
+                        <table id="datatable" class="display" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Custom</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for admin in admins  %}
+                                <tr> 
+                                    <td>{{ admin.id}}</td>
+                                    <td>{{ admin.username}}</td>
+                                    <td><a href="" class="btn btn-pencil"><i class="glyphicon-eye-open"></i></a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>               
+                    </div>
+               </div>
+            </div>
+            {% include 'AdminBundle:Common:footer.html.twig' %}
+            {% include 'AdminBundle:Common:rightmenu.html.twig' %}
+            <!--body wrapper end-->
+        </div>
+        <!-- body content end-->
+    </section>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#datatable').DataTable();
+        });
+    </script>
+{% endblock %}

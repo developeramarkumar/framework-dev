@@ -24,3 +24,21 @@ admin.logout:
 admin.dashboard:
     path:     /dashboard
     defaults: { _controller: AdminBundle:Dashboard:index }
+
+admin.role.list:
+    path:     /role
+    defaults: { _controller: AdminBundle:Role:index }
+    methods:  [GET]
+admin.role.add:
+    path:     /role
+    defaults: { _controller: AdminBundle:Permission:add }
+    methods:  [POST]
+
+admin.permission.list:
+    path:     /permission
+    defaults: { _controller: AdminBundle:Dashboard:index }
+    methods:  [GET]
+admin.permission.add:
+    path:     /permission
+    defaults: { _controller: AdminBundle:Dashboard:add }
+    methods:  [POST]
