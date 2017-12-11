@@ -1,0 +1,19 @@
+{
+    "name": "webreinvent/validation",
+    "description": "Use Illuminate Validation outside Laravel.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pradeep",
+            "email": "webreinvent@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/validation": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webreinvent\\Validation\\": "src/"
+        }
+    }
+}
