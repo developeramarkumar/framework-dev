@@ -15,12 +15,12 @@ class Mail
         $this->mail->isSMTP();                                      // Set mailer to use SMTP
 		$this->mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 		$this->mail->SMTPAuth = true;                               // Enable SMTP authentication
-		$this->mail->Username = 'no-reply@happypesa.com';                 // SMTP username
-		$this->mail->Password = 'newcreation2017@';                           // SMTP password
+		$this->mail->Username = 'username';                 // SMTP username
+		$this->mail->Password = 'password';                           // SMTP password
 		$this->mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 		$this->mail->Port = 465;   
         //Recipients
-        $this->mail->setFrom('no-reply@etherdoge.net', 'Etherdoge');
+        $this->mail->setFrom('no-reply@gmail.net', 'name');
         $this->mail->addAddress($to, $name);     // Add a recipient
         //Content
         $this->mail->isHTML(true);          
